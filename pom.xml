@@ -9,7 +9,7 @@
 		<relativePath/>
 		<!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.olab</groupId>
+	<groupId>com.abdul</groupId>
 	<artifactId>eth</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>eth</name>
@@ -85,8 +85,8 @@
 				<artifactId>web3j-maven-plugin</artifactId>
 				<version>4.12.3</version>
 				<configuration>
-					<packageName>com.zuehlke.blockchain.model</packageName>
-					<sourceDestination>src/main/java/generated</sourceDestination>
+					<packageName>com.abdul.eth.wrappers.contracts</packageName>
+					<sourceDestination>src/main/java/</sourceDestination>
 					<nativeJavaType>true</nativeJavaType>
 					<outputFormat>java,bin</outputFormat>
 					<soliditySourceFiles>
@@ -96,9 +96,9 @@
 						</includes>
 					</soliditySourceFiles>
 					<outputDirectory>
-						<java>src/java/generated</java>
-						<bin>src/bin/generated</bin>
-						<abi>src/abi/generated</abi>
+						<java>src/java/</java>
+						<bin>src/contracts/bin/</bin>
+						<abi>src/contracts/abi/</abi>
 					</outputDirectory>
 					<contract>
 						<includes>

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.8.0;
 
-contract Mortal {
+contract BaseContract {
     address public owner;
 
     constructor() {
@@ -22,8 +22,15 @@ contract Mortal {
     receive() external payable {}
 }
 
-contract HelloWorld is Mortal {
+contract LegalContract is BaseContract {
+
     string public greet;
+
+    struct Participant {
+        string name;
+    }
+
+    uint256[] participants;
 
     constructor(string memory _greet) {
         greet = _greet;
