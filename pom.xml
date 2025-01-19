@@ -35,6 +35,9 @@
     <spring-boot.version>3.4.1</spring-boot.version> <!-- Latest Spring Boot 3.x version -->
     <org.mapstruct.version>1.5.5.Final</org.mapstruct.version> <!-- Latest stable version of MapStruct -->
     <org.lombok.version>1.18.30</org.lombok.version> <!-- Latest version of Lombok -->
+    <web3j-maven-plugin-version>4.12.3</web3j-maven-plugin-version>
+    <web3j-version>4.12.2</web3j-version>
+    <com.fasterxml.jackson.version>2.18.2</com.fasterxml.jackson.version>
   </properties>
 
   <dependencies>
@@ -48,35 +51,35 @@
     <dependency>
       <groupId>org.web3j</groupId>
       <artifactId>core</artifactId>
-      <version>5.0.0</version>
+      <version>${web3j-version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.web3j/crypto -->
     <dependency>
       <groupId>org.web3j</groupId>
       <artifactId>crypto</artifactId>
-      <version>5.0.0</version>
+      <version>${web3j-version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.web3j/utils -->
     <dependency>
       <groupId>org.web3j</groupId>
       <artifactId>utils</artifactId>
-      <version>5.0.0</version>
+      <version>${web3j-version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.web3j/abi -->
     <dependency>
       <groupId>org.web3j</groupId>
       <artifactId>abi</artifactId>
-      <version>5.0.0</version>
+      <version>${web3j-version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.18.2</version>
+      <version>${com.fasterxml.jackson.version}</version>
     </dependency>
 
     <dependency>
@@ -136,7 +139,7 @@
       <plugin>
         <groupId>org.web3j</groupId>
         <artifactId>web3j-maven-plugin</artifactId>
-        <version>4.11.0</version>
+        <version>${web3j-maven-plugin-version}</version>
         <configuration>
           <packageName>com.abdul.eth.wrappers.contracts</packageName>
           <sourceDestination>src/main/java/</sourceDestination>

@@ -8,9 +8,9 @@ import java.math.BigInteger;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.web3j.crypto.CipherException;
 import org.web3j.crypto.Wallet;
 import org.web3j.crypto.WalletFile;
+import org.web3j.crypto.exception.CipherException;
 
 @Service
 @RequiredArgsConstructor

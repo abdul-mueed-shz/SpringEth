@@ -1,9 +1,9 @@
 package com.abdul.eth.domain.ethereum.port.in;
 
+import com.abdul.eth.domain.ethereum.model.BlockInfo;
 import java.io.IOException;
-import java.math.BigInteger;
 
 public interface GetBlockNumberUseCase {
 
-    BigInteger get() throws IOException;
+    BlockInfo get() throws IOException;
 }
