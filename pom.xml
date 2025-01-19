@@ -15,18 +15,27 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>eth</name>
   <description>Project to interact with ethereum blockhcain</description>
-  <url/>
+
+  <url>https://github.com/abdul-mueed-shz/SpringEth</url>
+
   <licenses>
-    <license/>
   </licenses>
+
   <developers>
-    <developer/>
+    <developer>
+      <id>your-id</id>
+      <name>Abdul Mueed Shahbaz</name>
+      <email>abdulmueedshahbaz@gmail.com</email>
+      <organization>https://www.abdulmueed.dev/</organization>
+      <organizationUrl>https://www.abdulmueed.dev/</organizationUrl>
+    </developer>
   </developers>
+
   <scm>
-    <connection/>
-    <developerConnection/>
-    <tag/>
-    <url/>
+    <connection>scm:git:git@github.com:abdul-mueed-shz/SpringEth.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:abdul-mueed-shz/SpringEth.git</developerConnection>
+    <tag>HEAD</tag>
+    <url>https://github.com/abdul-mueed-shz/SpringEth</url>
   </scm>
 
   <properties>
