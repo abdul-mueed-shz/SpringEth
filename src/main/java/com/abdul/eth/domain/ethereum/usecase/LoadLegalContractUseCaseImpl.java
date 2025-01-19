@@ -1,6 +1,6 @@
 package com.abdul.eth.domain.ethereum.usecase;
 
-import com.abdul.eth.domain.ethereum.model.LoadContractRequestInfo;
+import com.abdul.eth.domain.ethereum.model.LoadLegalContractInfo;
 import com.abdul.eth.domain.ethereum.port.in.LoadLegalContractUseCase;
 import com.abdul.eth.validators.SmartContractValidator;
 import com.abdul.eth.wrappers.contracts.LegalContract;
@@ -23,11 +23,11 @@ public class LoadLegalContractUseCaseImpl implements LoadLegalContractUseCase {
     @Value("${ethereum.wallet.private-key-hex}")
     private String privateKeyHex;
 
-    public LegalContract execute(LoadContractRequestInfo loadContractRequestInfo) throws IOException {
-        if (!smartContractValidator.contractExists(loadContractRequestInfo.getContractAddress())) {
+    public LegalContract execute(LoadLegalContractInfo loadLegalContractInfo) throws IOException {
+        if (!smartContractValidator.contractExists(loadLegalContractInfo.getContractAddress())) {
             return null;
         }
-        return LegalContract.load(loadContractRequestInfo.getContractAddress(), web3j,
+        return LegalContract.load(loadLegalContractInfo.getContractAddress(), web3j,
                 Credentials.create(privateKeyHex), contractGasProvider);
     }
 

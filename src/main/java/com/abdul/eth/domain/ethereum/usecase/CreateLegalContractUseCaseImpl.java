@@ -1,7 +1,7 @@
 package com.abdul.eth.domain.ethereum.usecase;
 
 import com.abdul.eth.domain.ethereum.model.LegalContractInfo;
-import com.abdul.eth.domain.ethereum.model.LoadContractRequestInfo;
+import com.abdul.eth.domain.ethereum.model.LoadLegalContractInfo;
 import com.abdul.eth.domain.ethereum.port.in.CreateLegalContractUseCase;
 import com.abdul.eth.domain.ethereum.port.in.DeployLegalContractUseCase;
 import com.abdul.eth.domain.ethereum.port.in.LoadLegalContractUseCase;
@@ -23,10 +23,11 @@ public class CreateLegalContractUseCaseImpl implements CreateLegalContractUseCas
     private final DeployLegalContractUseCase deployLegalContractUseCase;
 
     public LegalContractInfo execute(LegalContractInfo legalContractInfo) throws Exception {
-        // Check database or whatever storage location you have for addresses to get the address and load the contract.
+        // TODO:
+        //  Check database or whatever storage location you have for addresses to get the address and load the contract.
         String contractAddress = "0x5fbdb2315678afecb367f032d93f642f64180aa3";
         LegalContract legalContract = loadLegalContractUseCase
-                .execute(LoadContractRequestInfo.builder().contractAddress(contractAddress).build());
+                .execute(LoadLegalContractInfo.builder().contractAddress(contractAddress).build());
 
         if (Objects.nonNull(legalContract)) {
             List<Participant> participantList = new ArrayList<>();
@@ -39,7 +40,7 @@ public class CreateLegalContractUseCaseImpl implements CreateLegalContractUseCas
                     legalContractInfo.getTerms(),
                     legalContractInfo.getDescription()
             ).send();
-            BigInteger contractId = getContractIdFromContractAddedevent(transactionReceipt);
+            BigInteger contractId = getContractIdFromContractAddedEvent(transactionReceipt);
             legalContractInfo.setId(contractId);
             return legalContractInfo;
         }
@@ -47,12 +48,12 @@ public class CreateLegalContractUseCaseImpl implements CreateLegalContractUseCas
         TransactionReceipt transactionReceipt = legalContract.getTransactionReceipt().orElseThrow(() ->
                 new RuntimeException("Transaction receipt not available")
         );
-        BigInteger contractId = getContractIdFromContractAddedevent(transactionReceipt);
+        BigInteger contractId = getContractIdFromContractAddedEvent(transactionReceipt);
         legalContractInfo.setId(contractId);
         return legalContractInfo;
     }
 
-    private BigInteger getContractIdFromContractAddedevent(
+    private BigInteger getContractIdFromContractAddedEvent(
             TransactionReceipt transactionReceipt) {
         List<LegalContract.ContractAddedEventResponse> events =
                 LegalContract.getContractAddedEvents(transactionReceipt);

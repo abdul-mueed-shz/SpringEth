@@ -1,6 +1,7 @@
 package com.abdul.eth.domain.ethereum.enums;
 
 import java.math.BigInteger;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -16,7 +17,7 @@ public enum ContractType {
 
     public static ContractType fromValue(BigInteger value) {
         for (ContractType type : ContractType.values()) {
-            if (type.value == value) {
+            if (Objects.equals(type.value, value)) {
                 return type;
             }
         }

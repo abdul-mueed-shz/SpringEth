@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class LoadContractRequestInfo {
+public class LoadLegalContractInfo {
 
     private String contractAddress;
 }
