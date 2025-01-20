@@ -1,4 +1,4 @@
-package com.abdul.eth.validators;
+package com.abdul.eth.domain.ethereum.validators;
 
 import java.io.IOException;
 import lombok.RequiredArgsConstructor;

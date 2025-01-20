@@ -2,7 +2,7 @@ package com.abdul.eth.domain.ethereum.usecase;
 
 import com.abdul.eth.domain.ethereum.model.LoadLegalContractInfo;
 import com.abdul.eth.domain.ethereum.port.in.LoadLegalContractUseCase;
-import com.abdul.eth.validators.SmartContractValidator;
+import com.abdul.eth.domain.ethereum.validators.SmartContractValidator;
 import com.abdul.eth.wrappers.contracts.LegalContract;
 import java.io.IOException;
 import lombok.RequiredArgsConstructor;
